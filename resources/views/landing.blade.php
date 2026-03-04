@@ -32,8 +32,8 @@
     <div class="bg-blue-900 text-white py-2 text-sm">
         <div class="max-w-7xl mx-auto px-4 flex justify-between">
             <div class="flex items-center space-x-2">
-                <img src="/images/LGU.jpg" alt="LGU Logo" class="h-6 w-auto rounded">
-                <span>Republic of the Philippines | Province of Bukidnon</span>
+                <img src="/images/republic.png" alt="LGU Logo" class="h-6 w-auto rounded">
+                <span>Republic of the Philippines | Province of Bukidnon  | REGION X </span>
             </div>
             <div class="space-x-4">
                 <span>📞 (088) 123-4567</span>
@@ -48,6 +48,7 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
                     <!-- PESO Logo Image -->
+                     <img src="/images/LGU.jpg" alt="PESO Logo" class="w-12 h-12 rounded-lg shadow-lg object-cover">
                    <img src="/images/peso-logo.jpg" alt="PESO Logo" class="w-12 h-12 rounded-lg shadow-lg object-cover">
                     <div>
                         <h1 class="font-bold text-gray-800">Public Employment Service Office</h1>
@@ -130,9 +131,9 @@
         
         <div class="relative max-w-7xl mx-auto px-4 z-10">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white mb-2 drop-shadow-lg">HISTORY OF PESO</h2>
+                <h2 class="text-4xl font-bold text-black mb-2 drop-shadow-lg">HISTORY OF PESO</h2>
                 <div class="w-24 h-1 bg-red-600 mx-auto"></div>
-                <p class="text-white drop-shadow-lg mt-4">Public Employment Service Office in Manolo Fortich</p>
+                <p class="text-black drop-shadow-lg mt-4">Public Employment Service Office in Manolo Fortich</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -266,7 +267,7 @@
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-blue-900 mb-2">PESO Services</h2>
+                <h2 class="text-4xl font-bold text-blue-900 mb-2 section-title">PESO Services</h2>
                 <div class="w-24 h-1 bg-red-600 mx-auto"></div>
                 <p class="text-gray-600 mt-4">Comprehensive employment assistance for every Manolofortichanon</p>
             </div>
