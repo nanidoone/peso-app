@@ -450,7 +450,7 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Follow Us On</h4>
+                    <h4 class="font-bold mb-4">Follow Us/ Message Us On</h4>
                     <div class="flex space-x-4">
                         <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 transition">FB</a>
                         <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 transition">TL</a>
