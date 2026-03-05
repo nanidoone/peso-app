@@ -29,18 +29,23 @@
 </head>
 <body class="bg-gray-50">
     <!-- Top Bar with LGU Info and Logo -->
-    <div class="bg-blue-900 text-white py-2 text-sm">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between">
-            <div class="flex items-center space-x-2">
-                <img src="/images/republic.png" alt="LGU Logo" class="h-6 w-auto rounded">
-                <span>Republic of the Philippines | Province of Bukidnon  | REGION X </span>
-            </div>
-            <div class="space-x-4">
-                <span>📞 (088) 123-4567</span>
-                <span>✉️ peso@manolofortich.gov.ph</span>
-            </div>
+<div class="bg-blue-900 text-white py-2 text-sm">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img src="/images/republic.png" alt="LGU Logo" class="h-6 w-auto rounded">
+            <span>Republic of the Philippines | Province of Bukidnon</span>
+        </div>
+        <div class="flex space-x-4 items-center">
+            <span class="flex items-center">
+                <i class="fas fa-phone-alt mr-1"></i> (088) 123-4567
+            </span>
+            <span class="flex items-center">
+                <img src="/images/gmailicon.png" alt="Gmail" class="w-4 h-4 mr-1">
+                peso@manolofortich.gov.ph
+            </span>
         </div>
     </div>
+</div>
 
     <!-- Main Navigation with Logo -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
