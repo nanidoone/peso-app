@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PESO JOB PORTAL SYSTEM | Manolo Fortich, Bukidnon</title>
+    <title>PESO JOB PORTAL SYSTEM | Manolo Fortich, Bukidnon </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for professional icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -33,7 +33,7 @@
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div class="flex items-center space-x-2">
             <img src="/images/republic.png" alt="LGU Logo" class="h-6 w-auto rounded">
-            <span>Republic of the Philippines | Province of Bukidnon</span>
+            <span>Republic of the Philippines | Province of Bukidnon | REGION X</span>
         </div>
         <div class="flex space-x-4 items-center">
             <span class="flex items-center">
