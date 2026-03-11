@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration | PESO Manolo Fortich</title>
+    <title>Register | PESO Manolo Fortich</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -53,6 +53,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             z-index: 10;
+            text-decoration: none;
         }
         
         .back-button:hover {
@@ -65,7 +66,7 @@
             display: flex;
             justify-content: space-between;
             margin: 3rem auto 2rem;
-            max-width: 500px;
+            max-width: 400px;
             position: relative;
         }
         
@@ -115,18 +116,8 @@
             color: #ffd700;
         }
         
-        .step-line {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            width: 100%;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.3);
-            z-index: -1;
-        }
-        
         .form-container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 2rem auto;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -184,7 +175,6 @@
         .btn-next:hover {
             background: #1e40af;
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.4);
         }
         
         .btn-prev {
@@ -199,6 +189,7 @@
         }
         
         .btn-submit {
+            width: 100%;
             background: linear-gradient(135deg, #1e3a8a, #dc2626);
             color: white;
             padding: 1rem;
@@ -207,7 +198,6 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             border: none;
-            width: 100%;
             cursor: pointer;
         }
         
@@ -216,12 +206,85 @@
             box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
         }
         
-        .data-privacy-box {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(220, 38, 38, 0.05));
-            border: 2px solid rgba(30, 58, 138, 0.2);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 2rem;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f3f4f6;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: #e5e7eb;
+            transform: rotate(90deg);
+        }
+        
+        .terms-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .terms-text {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-left: 1rem;
+            border-left: 2px solid #e5e7eb;
         }
         
         .bg-pattern {
@@ -238,7 +301,6 @@
     </style>
 </head>
 <body>
-    <!-- Background pattern overlay -->
     <div class="bg-pattern"></div>
     
     <!-- Back to Home Button -->
@@ -251,18 +313,13 @@
         <!-- Header -->
         <div class="text-center mb-4">
             <div class="flex justify-center mb-4">
-                <div class="relative">
-                    <img src="/images/peso-logo.jpg" alt="PESO" class="w-20 h-20 rounded-2xl shadow-2xl border-4 border-white">
-                    <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-900 to-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl shadow-lg">
-                        <i class="fas fa-check"></i>
-                    </div>
-                </div>
+                <img src="/images/peso-logo.jpg" alt="PESO" class="w-20 h-20 rounded-2xl shadow-2xl border-4 border-white">
             </div>
             <h1 class="text-4xl font-bold text-white drop-shadow-lg">Create Account</h1>
-            <p class="text-white/90 mt-2 drop-shadow">Join PESO Manolo Fortich in 3 easy steps</p>
+            <p class="text-white/90 mt-2 drop-shadow">Join PESO Manolo Fortich</p>
         </div>
 
-        <!-- Step Indicator -->
+        <!-- Simple 2-Step Indicator -->
         <div class="step-indicator">
             <div class="step active" id="step1-indicator">
                 <div class="step-number">1</div>
@@ -272,49 +329,45 @@
             <div class="step" id="step2-indicator">
                 <div class="step-number">2</div>
                 <div class="step-label">Personal</div>
-                <div class="step-line"></div>
-            </div>
-            <div class="step" id="step3-indicator">
-                <div class="step-number">3</div>
-                <div class="step-label">NSRP Form</div>
             </div>
         </div>
 
         <!-- Form Container -->
         <div class="form-container">
-            <!-- Step 1: Account Details -->
+            <!-- Step 1: Account Details (Required) -->
             <div class="form-step active" id="step1">
-                <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-900 mb-6">
                     <i class="fas fa-user-circle mr-3 text-red-600"></i> Account Information
                 </h2>
                 
                 <div class="space-y-4">
                     <div>
-                        <label class="form-label">Full Name</label>
-                        <input type="text" class="form-input" placeholder="Juan Dela Cruz">
+                        <label class="form-label">Full Name <span class="text-red-500">*</span></label>
+                        <input type="text" class="form-input" placeholder="Juan Dela Cruz" required>
                     </div>
                     <div>
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" placeholder="juan@example.com">
+                        <label class="form-label">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" class="form-input" placeholder="juan@example.com" required>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-input" placeholder="********">
+                            <label class="form-label">Password <span class="text-red-500">*</span></label>
+                            <input type="password" class="form-input" placeholder="********" required>
                         </div>
                         <div>
-                            <label class="form-label">Confirm Password</label>
-                            <input type="password" class="form-input" placeholder="********">
+                            <label class="form-label">Confirm <span class="text-red-500">*</span></label>
+                            <input type="password" class="form-input" placeholder="********" required>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 2: Personal Details -->
+            <!-- Step 2: Personal Details (Optional) -->
             <div class="form-step" id="step2">
-                <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-900 mb-6">
                     <i class="fas fa-id-card mr-3 text-red-600"></i> Personal Information
                 </h2>
+                <p class="text-sm text-gray-500 mb-4">Optional - You can fill this later</p>
                 
                 <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
@@ -342,221 +395,132 @@
                         <label class="form-label">Address</label>
                         <input type="text" class="form-input" placeholder="Street, Barangay, City">
                     </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="form-label">City</label>
-                            <input type="text" class="form-input" value="Manolo Fortich" readonly>
-                        </div>
-                        <div>
-                            <label class="form-label">Province</label>
-                            <input type="text" class="form-input" value="Bukidnon" readonly>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Step 3: NSRP Establishment Form -->
-            <div class="form-step" id="step3">
-                <h2 class="text-2xl font-bold text-blue-900 mb-2 flex items-center">
-                    <i class="fas fa-building mr-3 text-red-600"></i> NSRP Form 2
-                </h2>
-                <p class="text-sm text-gray-500 mb-6">Based on DOLE National Skills Registration Program</p>
+            <!-- Terms and Submit -->
+            <div class="mt-6">
+                <label class="flex items-start gap-2 cursor-pointer mb-4">
+                    <input type="checkbox" class="w-4 h-4 rounded mt-1" required>
+                    <span class="text-sm text-gray-600">
+                        I agree to the 
+                        <a href="#" onclick="openTermsModal(); return false;" class="text-blue-900 font-semibold hover:underline">Terms and Conditions</a>
+                    </span>
+                </label>
 
-                <div class="nsrp-section">
-                    <!-- Establishment Details -->
-                    <h3 class="nsrp-title">I. ESTABLISHMENT DETAILS</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="form-label">Business Name</label>
-                            <input type="text" class="form-input" placeholder="e.g., ABC Corporation">
-                        </div>
-                        <div>
-                            <label class="form-label">Trade Name</label>
-                            <input type="text" class="form-input" placeholder="e.g., ABC Store">
-                        </div>
-                        <div>
-                            <label class="form-label">TIN</label>
-                            <input type="text" class="form-input" placeholder="123-456-789-000">
-                        </div>
-                        <div>
-                            <label class="form-label">Industry Type</label>
-                            <select class="form-input">
-                                <option>Retail</option>
-                                <option>Manufacturing</option>
-                                <option>Services</option>
-                                <option>Agriculture</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Office Type -->
-                    <div class="mb-4">
-                        <label class="form-label">Office Type</label>
-                        <div class="flex gap-4">
-                            <label class="checkbox-item"><input type="checkbox"> Main office</label>
-                            <label class="checkbox-item"><input type="checkbox"> Branch</label>
-                        </div>
-                    </div>
-
-                    <!-- Employer Type -->
-                    <div class="mb-4">
-                        <label class="form-label">Employer Type</label>
-                        <div class="checkbox-grid">
-                            <label class="checkbox-item"><input type="radio" name="emp_type"> Public</label>
-                            <label class="checkbox-item"><input type="radio" name="emp_type"> Private</label>
-                            <label class="checkbox-item"><input type="radio" name="emp_type"> LGU</label>
-                            <label class="checkbox-item"><input type="radio" name="emp_type"> NGO</label>
-                            <label class="checkbox-item"><input type="radio" name="emp_type"> Government Agency</label>
-                        </div>
-                    </div>
-
-                    <!-- Work Force -->
-                    <div class="mb-4">
-                        <label class="form-label">Work Force Size</label>
-                        <div class="flex flex-wrap gap-2 mb-2">
-                            <span class="tag">Micro (1-9)</span>
-                            <span class="tag">Small (10-99)</span>
-                            <span class="tag">Medium (100-199)</span>
-                            <span class="tag">Large (200+)</span>
-                        </div>
-                        <select class="form-input">
-                            <option>Select workforce size</option>
-                            <option>Micro (1-9 employees)</option>
-                            <option>Small (10-99 employees)</option>
-                            <option>Medium (100-199 employees)</option>
-                            <option>Large (200+ employees)</option>
-                        </select>
-                    </div>
-
-                    <!-- Contact Details -->
-                    <h3 class="nsrp-title mt-6">II. CONTACT DETAILS</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="form-label">Owner/President</label>
-                            <input type="text" class="form-input" placeholder="Full name">
-                        </div>
-                        <div>
-                            <label class="form-label">Contact Person</label>
-                            <input type="text" class="form-input" placeholder="Full name">
-                        </div>
-                        <div>
-                            <label class="form-label">Position</label>
-                            <input type="text" class="form-input" placeholder="e.g., HR Manager">
-                        </div>
-                        <div>
-                            <label class="form-label">Contact Number</label>
-                            <input type="text" class="form-input" placeholder="0917 123 4567">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-input" placeholder="company@email.com">
-                        </div>
-                    </div>
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between">
+                    <button type="button" class="btn-nav btn-prev" id="prevBtn" onclick="prevStep()" style="display: none;">Previous</button>
+                    <button type="button" class="btn-nav btn-next" id="nextBtn" onclick="nextStep()">Next</button>
+                    <button type="button" class="btn-submit" id="submitBtn" onclick="submitForm()" style="display: none;">
+                        <i class="fas fa-check-circle mr-2"></i> Complete Registration
+                    </button>
                 </div>
+            </div>
 
-                <!-- DATA PRIVACY SECTION -->
-                <div class="data-privacy-box">
-                    <div class="data-privacy-title">
-                      
-                        Data Privacy Notice
-                    </div>
-                    
-                    <div class="space-y-3 text-sm text-gray-700">
-                        <p class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
-                            <span>Republic Act No. 10173 (Data Privacy Act of 2012) requires us to protect your personal information.</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
-                            <span>The information collected will be used solely for employment facilitation and program registration purposes by PESO Manolo Fortich.</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
-                            <span>Your data will be shared with DOLE and partner government agencies only for employment-related programs.</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
-                            <span>You have the right to access, correct, and request deletion of your personal information.</span>
-                        </p>
-                    </div>
+            <!-- Login Link -->
+            <p class="text-center text-sm text-gray-600 mt-4">
+                Already have an account? 
+                <a href="/login" class="text-blue-900 font-semibold hover:underline">Sign in</a>
+            </p>
+        </div>
+    </div>
 
-                    <div class="mt-4 p-3 bg-gradient-to-r from-blue-50 to-red-50 rounded-lg border border-blue-200">
-                        <p class="text-xs text-gray-700">
-                            <i class="fas fa-info-circle text-blue-900 mr-1"></i>
-                            By completing this registration, you consent to the collection and processing of your personal information as described above.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Terms -->
-                <div class="space-y-3 mt-4">
-                    <label class="flex items-start gap-2 cursor-pointer">
-                        <input type="checkbox" id="dataPrivacy" class="w-4 h-4 rounded mt-1">
-                        <span class="text-sm text-gray-600">
-                            I have read and agree to the <a href="#" class="text-blue-900 font-semibold hover:underline">Data Privacy Policy</a>
-                        </span>
-                    </label>
-
-                    <label class="flex items-start gap-2 cursor-pointer">
-                        <input type="checkbox" id="terms" class="w-4 h-4 rounded mt-1">
-                        <span class="text-sm text-gray-600">
-                            I confirm that the information provided is true and correct
-                        </span>
-                    </label>
-                </div>
-
-                <p class="text-xs text-gray-400 mt-4 italic">
-                    * This form is based on DOLE NSRP Form 2. For official use only.
+    <!-- Terms and Conditions Modal (ICONS REMOVED) -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeTermsModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">
+                Terms and Conditions
+            </h2>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">1. Acceptance of Terms</h3>
+                <p class="terms-text">
+                    By accessing and using the PESO Manolo Fortich Job Portal, you accept and agree to be bound by the terms and conditions of this agreement.
                 </p>
             </div>
-
-            <!-- Navigation Buttons -->
-            <div class="flex justify-between mt-8">
-                <button type="button" class="btn-nav btn-prev" id="prevBtn" onclick="prevStep()">Previous</button>
-                <button type="button" class="btn-nav btn-next" id="nextBtn" onclick="nextStep()">Next</button>
-                <button type="button" class="btn-submit" id="submitBtn" onclick="submitForm()" style="display: none;">
-                    <i class="fas fa-check-circle mr-2"></i> Submit Registration
+            
+            <div class="terms-section">
+                <h3 class="terms-title">2. User Registration</h3>
+                <p class="terms-text">
+                    You must provide accurate, current, and complete information during the registration process. You are responsible for maintaining the confidentiality of your account credentials.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">3. Account Responsibilities</h3>
+                <p class="terms-text">
+                    You are solely responsible for all activities that occur under your account. Notify PESO immediately of any unauthorized use of your account.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">4. Privacy Policy</h3>
+                <p class="terms-text">
+                    Your use of the portal is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal information in compliance with RA 10173 (Data Privacy Act of 2012).
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">5. Job Seeker Responsibilities</h3>
+                <p class="terms-text">
+                    You agree to provide truthful information about your qualifications and experience. Misrepresentation may result in account termination.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">6. Employer Responsibilities</h3>
+                <p class="terms-text">
+                    Employers must provide accurate job descriptions and comply with all applicable labor laws and regulations.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">7. Prohibited Activities</h3>
+                <p class="terms-text">
+                    You may not use the portal for any unlawful purpose, to harass others, or to distribute malicious content.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h3 class="terms-title">8. Termination</h3>
+                <p class="terms-text">
+                    PESO reserves the right to terminate or suspend access to our service immediately, without prior notice, for any violation of these terms.
+                </p>
+            </div>
+            
+            <div class="flex justify-end mt-6">
+                <button onclick="acceptTerms()" class="bg-gradient-to-r from-blue-900 to-red-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-800 hover:to-red-700 transition">
+                    I Understand
                 </button>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="bg-gray-900/90 text-white py-6 rounded-2xl max-w-7xl mx-auto mt-8 backdrop-blur-sm">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <p class="text-sm text-gray-300">© 2026 Public Employment Service Office - Manolo Fortich. All rights reserved.</p>
-            </div>
-        </footer>
     </div>
 
     <script>
         let currentStep = 1;
-        const totalSteps = 3;
+        const totalSteps = 2;
 
         function updateStep() {
-            for (let i = 1; i <= totalSteps; i++) {
-                document.getElementById(`step${i}`).classList.remove('active');
-                document.getElementById(`step${i}-indicator`).classList.remove('active', 'completed');
-            }
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step1-indicator').classList.remove('active', 'completed');
+            document.getElementById('step2-indicator').classList.remove('active', 'completed');
 
             document.getElementById(`step${currentStep}`).classList.add('active');
             document.getElementById(`step${currentStep}-indicator`).classList.add('active');
 
-            for (let i = 1; i < currentStep; i++) {
-                document.getElementById(`step${i}-indicator`).classList.add('completed');
+            if (currentStep > 1) {
+                document.getElementById('step1-indicator').classList.add('completed');
             }
 
             document.getElementById('prevBtn').style.display = currentStep === 1 ? 'none' : 'block';
-            
-            if (currentStep === totalSteps) {
-                document.getElementById('nextBtn').style.display = 'none';
-                document.getElementById('submitBtn').style.display = 'block';
-            } else {
-                document.getElementById('nextBtn').style.display = 'block';
-                document.getElementById('submitBtn').style.display = 'none';
-            }
+            document.getElementById('nextBtn').style.display = currentStep === totalSteps ? 'none' : 'block';
+            document.getElementById('submitBtn').style.display = currentStep === totalSteps ? 'block' : 'none';
         }
 
         function nextStep() {
@@ -574,20 +538,30 @@
         }
 
         function submitForm() {
-            const dataPrivacyChecked = document.getElementById('dataPrivacy')?.checked;
-            const termsChecked = document.getElementById('terms')?.checked;
+            alert('Registration successful! Welcome to PESO Manolo Fortich!');
+        }
 
-            if (!dataPrivacyChecked) {
-                alert('Please agree to the Data Privacy Policy to continue.');
-                return;
+        // Terms Modal Functions
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function acceptTerms() {
+            closeTermsModal();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('termsModal');
+            if (event.target === modal) {
+                closeTermsModal();
             }
-
-            if (!termsChecked) {
-                alert('Please confirm that the information is correct.');
-                return;
-            }
-
-            alert('Registration submitted successfully! Thank you for registering with PESO Manolo Fortich.');
         }
 
         updateStep();
