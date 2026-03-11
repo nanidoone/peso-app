@@ -460,7 +460,7 @@
                 <!-- DATA PRIVACY SECTION -->
                 <div class="data-privacy-box">
                     <div class="data-privacy-title">
-                        <i class="fas fa-shield-alt text-red-600"></i>
+                      
                         Data Privacy Notice
                     </div>
                     
