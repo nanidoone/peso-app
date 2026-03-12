@@ -23,7 +23,7 @@
                     <img src="/images/peso-logo.jpg" alt="PESO" class="h-10 w-10 rounded-lg">
                     <span class="font-bold text-gray-800">PESO Dashboard</span>
                 </div>
-                <a href="/" class="text-gray-600 hover:text-gray-900">← Back to Home</a>
+                <a href="{{ route('home') }}" class="text-gray-600 hover:text-gray-900">← Back to Home</a>
             </div>
         </nav>
 
@@ -38,7 +38,7 @@
                 <p class="text-sm text-gray-600"><span class="font-medium">Name:</span> Juan Dela Cruz</p>
                 <p class="text-sm text-gray-600"><span class="font-medium">Email:</span> juan@example.com</p>
                 <p class="text-sm text-gray-600"><span class="font-medium">Account Type:</span> Job Seeker</p>
-                <p class="text-sm text-gray-600 mt-2 italic">(This is a demo - data will come from database)</p>
+                <p class="text-sm text-gray-600 mt-2 italic">(This is a demo - data will come from database later)</p>
             </div>
         </div>
     </div>

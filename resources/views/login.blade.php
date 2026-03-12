@@ -102,15 +102,16 @@
         </div>
         
         <!-- Login Form -->
-        <form>
+        <form method="POST" action="{{ route('login.submit') }}">
+            @csrf
             <div class="mb-4">
                 <label class="form-label">Email Address</label>
-                <input type="email" class="form-input" placeholder="juan@example.com" required>
+                <input type="email" class="form-input" placeholder="juan@example.com">
             </div>
             
             <div class="mb-4">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-input" placeholder="••••••••" required>
+                <input type="password" class="form-input" placeholder="••••••••">
             </div>
             
             <div class="flex items-center justify-between mb-4">
@@ -127,11 +128,11 @@
             
             <p class="text-center text-sm text-gray-600">
                 Don't have an account? 
-                <a href="/register" class="register-link">Register here</a>
+                <a href="{{ route('register') }}" class="register-link">Register here</a>
             </p>
             
             <div class="text-center mt-4">
-                <a href="/" class="back-link">
+                <a href="{{ route('home') }}" class="back-link">
                     ← Back to Home
                 </a>
             </div>
